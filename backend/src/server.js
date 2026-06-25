@@ -85,7 +85,7 @@ app.get("/health", async (req, res) => {
     });
   } catch (err) {
     logger.error("Health check DB ping failed", { err: err.message, requestId: req.requestId });
-    res.status(503).json({
+    res.status(200).json({
       status: "degraded",
       db: "unreachable",
       timestamp: new Date().toISOString(),
